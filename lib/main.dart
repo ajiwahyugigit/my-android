@@ -10,32 +10,33 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int number = 0;
+  String message = "ini adalah text nia";
 
-  void tekanTombol() {
-    setState(() {
-      number = number + 1;
-    });
-  }
+  // void tombolDitekan() {
+  //   setState(() {
+  //     message = "Tombol sudah ditekan";
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Stateful Widget"),
+          title: Text("Anonymous Method"),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                number.toString(),
-                style: TextStyle(fontSize: 10 + number.toDouble()),
-              ),
+              Text(message),
               ElevatedButton(
-                child: Text("Tambah Bilangan"),
-                onPressed: tekanTombol,
+                child: Text("Tekan Saya"),
+                onPressed: () {
+                  setState(() { //anonymous method
+                    message = "Tombol sudah di tekan";
+                  });
+                },
               )
             ],
           ),
@@ -44,6 +45,48 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+//stateful widget
+// class MyApp extends StatefulWidget {
+//   @override
+//   _MyAppState createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   int number = 0;
+//
+//   void tekanTombol() {
+//     setState(() {
+//       number = number + 1;
+//     });
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text("Stateful Widget"),
+//         ),
+//         body: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               Text(
+//                 number.toString(),
+//                 style: TextStyle(fontSize: 10 + number.toDouble()),
+//               ),
+//               ElevatedButton(
+//                 child: Text("Tambah Bilangan"),
+//                 onPressed: tekanTombol,
+//               )
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 // class MyApp extends StatelessWidget {
 //   @override
