@@ -1,50 +1,83 @@
+// import 'dart:html';
+
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(new MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String message = "ini adalah text nia";
-
-  // void tombolDitekan() {
-  //   setState(() {
-  //     message = "Tombol sudah ditekan";
-  //   });
-  // }
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Anonymous Method"),
+          title: Text("Latihan Text Style"),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(message),
-              ElevatedButton(
-                child: Text("Tekan Saya"),
-                onPressed: () {
-                  setState(() { //anonymous method
-                    message = "Tombol sudah di tekan";
-                  });
-                },
-              )
-            ],
+          child: Text(
+            "ini adalah Text",
+            style: TextStyle(
+                fontFamily: "Updock",
+                fontStyle: FontStyle.italic,
+                fontSize: 30,
+                decoration: TextDecoration.underline,
+                decorationColor: Colors.red,
+                decorationThickness: 5,
+                decorationStyle: TextDecorationStyle.wavy
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+// class MyApp extends StatefulWidget {
+//   @override
+//   _MyAppState createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   String message = "ini adalah text nia";
+//
+//   // void tombolDitekan() {
+//   //   setState(() {
+//   //     message = "Tombol sudah ditekan";
+//   //   });
+//   // }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text("Anonymous Method"),
+//         ),
+//         body: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               Text(message),
+//               ElevatedButton(
+//                 child: Text("Tekan Saya"),
+//                 onPressed: () {
+//                   setState(() { //anonymous method
+//                     message = "Tombol sudah di tekan";
+//                   });
+//                 },
+//               )
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 //stateful widget
 // class MyApp extends StatefulWidget {
